@@ -57,7 +57,7 @@ useEffect(() => {
   };
   return (
     <div>
-       <InfiniteScroll
+     {ships.length===0 ? <div><h2>Please select types to view the ship lists</h2></div> : <InfiniteScroll
             dataLength={scrollData.length}
             next={handleOnRowsScrollEnd}
             hasMore={hasMoreValue}
@@ -123,8 +123,9 @@ useEffect(() => {
         </Container>
       </Grid>
       </InfiniteScroll>
-
+}
     </div>
+
   )
 }
 
