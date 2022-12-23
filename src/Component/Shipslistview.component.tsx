@@ -11,20 +11,15 @@ const Shipslistview: React.FC<ShipsProps> = ({ ships }: ShipsProps) => {
    
   const [open, setOpen] = React.useState(false);
   const [scrollData, setScrollData] = React.useState(ships);
-  console.log("**********",ships);
-  console.log(scrollData);
+  //console.log("**********",ships);
+  //console.log(scrollData);
 const [hasMoreValue, setHasMoreValue] = React.useState(true);
 let shipType:String;
 
 
-
-// useEffect(() => {
-//   setScrollData(ships.slice(0, 8));
-//   console.log("in use effect",scrollData);
-// }, []);
 useEffect(() => {
   setScrollData(ships.slice(0, 8));
-  console.log("in use effect of ship",scrollData);
+  //console.log("in use effect of ship",scrollData);
 }, [ships]);
 
   const handleClickOpen = () => {
@@ -36,9 +31,9 @@ useEffect(() => {
   };
 
   const handleOnRowsScrollEnd = () => {
-    console.log("indis end scroll fn");
+    //console.log("indis end scroll fn");
     if (scrollData.length < ships.length) {
-      console.log("in if cond");
+      //console.log("in if cond");
       setHasMoreValue(true);
       loadScrollData();
     } else {
@@ -48,9 +43,9 @@ useEffect(() => {
 
   const loadScrollData = async () => {
     try {
-      console.log("loading data to scroll");
+      //console.log("loading data to scroll");
       setScrollData(ships.slice(0, scrollData.length + 8));
-      console.log("scroll new data",scrollData);
+      //console.log("scroll new data",scrollData);
     } catch (err) {
       console.log(err);
     }
